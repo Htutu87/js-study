@@ -1,132 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do dia</title>
-    <style>
-        body{
-            background-color: wheat;
-        }
-        div{
-            margin: 0 auto;
-            width: 50%;
-            text-align: center;
-        }
-
-        div#titulo{
-            font: normal 30pt Times New Roman;
-            border-width: 1px;
-            border-color: violet;
-            text-align: center;
-            margin-top: 20px;
-            color:white;
-            text-shadow: 2px 2px 3px black;
-        }
-        div#janela{
-            font: normal 16pt Times New Roman;
-            background-color: whitesmoke;
-            width: 500px;
-            height: 330px;
-            margin-top: 20px;
-            border-radius: 50px;
-            box-shadow: 8px 8px 13px black;
-        }
-        div#dev{
-            margin: 0 auto;
-            width: 50%;
-            width: 400px;
-            text-align: center;
-            margin-top: 35px;
-        }
-
-        p {
-            top: 15px;
-            position: relative;
-        }
-        img{
-            height: 230px;
-            border-radius: 500px;
-            margin-top: 10px;
-        }
-        input{
-            position: fixed;
-            left: 50%;
-            bottom: 8px;
-            transform: translate(-50%, -50%);
-            margin: 0 auto;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="titulo"><strong>Hora do dia</strong></div>
-    
-    <div id="janela">
-        <p id="par"><strong>Bom dia!</strong><br>Agora são 9 horas.</p>
-        <img id="image" src="img/sunshine.jpg">
+<body onload="Load()">
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <section>
+        <div>
+            <p id="text">Default text.</p>
+        </div>
+        <div>
+            <img id="image" src="img/sunshine.jpg">
+        </div>
+    </section>
+    <footer>
+        <p id='dev'>&copy;ArturAmaralCode - Proprietary software</p>
+    </footer>
+    <div>
+        <input type="button" value="Testar" id="button" onclick="Test()">
     </div>
-    
-    <div id="dev">@ArturAmaralCode - Proprietary software</div>
-
-    <input type="button" value="Testar" onclick="TrocaHora()">
-
-    <script>
-
-            function TrocaHora(){ //Função para teste
-                console.log("clicou")
-                controle++
-                controle = controle > 3 ? 1: controle
-                switch(controle){
-                    case 1:
-                        TransformaEmDia()
-                        break
-                    case 2:
-                        TransformaEmTarde()
-                        break
-                    case 3: 
-                        TransformaEmNoite()
-                        break
-                }
-            }
-
-            function TransformaEmDia(){
-                image.src="img/sunshine.jpg"
-                text.innerHTML = `<strong>Bom dia!</strong><br>Agora são ${daytime} horas e ${minutes} minutos.`
-                document.body.style.backgroundColor = 'wheat'
-            }
-            function TransformaEmTarde(){
-                image.src="img/evening.jpg"
-                text.innerHTML = `<strong>Bom tarde!</strong><br>Agora são ${daytime} horas e ${minutes} minutos.`
-                document.body.style.backgroundColor = 'sandybrown'
-            }
-            function TransformaEmNoite(){
-                image.src="img/night.jpg"
-                text.innerHTML = `<strong>Boa noite!</strong><br>Agora são ${daytime} horas e ${minutes} minutos.`
-                document.body.style.backgroundColor = 'royalblue'
-            }
-
-            
-            var daytime = new Date().getHours()
-            var minutes = new Date().getMinutes()
-            console.log(daytime + 'h:'+ minutes +'m')
-            //var daytime = 5
-            var controle = 1
-            var image = window.document.getElementById('image')
-            var text = window.document.getElementById('par')
-        
-            if (daytime > 6 && daytime <= 12){
-                TransformaEmDia()
-            }
-            else if (daytime > 12 && daytime < 18){
-                TransformaEmTarde()
-            }
-            else{
-                TransformaEmNoite()
-            }
-
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

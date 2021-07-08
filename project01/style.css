@@ -1,0 +1,40 @@
+body{
+    background: wheat;
+    font: normal 18pt Times New Roman;
+}
+
+header{
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 3px black;
+}
+
+section{
+    background: whitesmoke;
+    border-radius: 30px;
+    padding: 5px;
+    height: 390px;
+    width: 500px;
+    margin: auto; /*Centraliza o elemento na tela*/
+    box-shadow: 8px 8px 13px rgba(0, 0, 0, 0.9);
+    padding-bottom: 20px;
+}
+
+div{
+    text-align: center;
+}
+
+footer{
+    font: normal 12pt Arial;
+    color: black;
+    text-align: center;
+    font-style: italic;
+    margin-top: 35px;
+}
+
+img{
+    width: 280px;
+    border-radius: 700px;
+    margin-bottom: 10px;
+}
+
