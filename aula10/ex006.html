@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números!</title>
+    <style>
+        div#res{
+            font: normal 20pt Times New Roman;
+            background-color:white;
+            text-align: center;
+            line-height: 70px;
+            margin-top: 15px;
+            width: 400px;
+            height: 70px;
+            }
+        input{
+                font: normal 18pt Times New Roman ;
+                width: 150px;
+            }
+
+    </style>
+</head>
+<body>
+    <h1>Somando números</h1>
+    <input type='number' name='txtn1' id='txtn1'> +
+    <input type='number' name='txtn2' id='txtn2'>
+    <input type="button" value="Somar" onclick="Somar()">
+    <div id="res"></div>
+
+    <script>
+
+        function Somar(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var r = window.document.getElementById('res')
+            /*Alternativamente...
+            var tn1 = window.document.querySelector('div#txtn1')  
+            var tn2 = window.document.querySelector('div#txtn2')  
+            */
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+
+            r.innerHTML = `A soma entre <strong>${n1}</strong> e <strong>${n2}</strong> vale <strong>${s}</strong>.`
+            r.style.background = 'burlywood'
+        }
+
+    </script>
+
+</body>
+</html>
