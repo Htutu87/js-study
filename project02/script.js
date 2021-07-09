@@ -7,28 +7,37 @@ function Verificar(){
 
     var textoCaixa = document.getElementById("ano_nasc") // Esse método retorna o elemento HTML inteiro, não seu valor
     var anoNascimento = Number(textoCaixa.value)
-    var 
+    var anoAtual = new Date().getFullYear()
+    var idade = anoAtual - anoNascimento
+    var radio = document.getElementById("male")
+    var sexo = radio.checked ? "homem":"mulher" 
 
+    console.log(sexo)
     /*  
     console.log(`textoCaixa: ${textoCaixa} Tipo: ${typeof textoCaixa}`)
     console.log(`textoCaixa.value: ${textoCaixa.value} Tipo: ${typeof textoCaixa.value}`)
     console.log(`anoNascimento: ${anoNascimento} Tipo: ${typeof anoNascimento}`)
-    
-    console.log(textoCaixa.value == '')
-    //console.log("textoCaixa.value: " + typeof textoCaixa.value)
-*/
+    */
 
     if (anoNascimento < 0 || textoCaixa.value == ''){
-        console.log('invalido') 
-    } else if (anoNascimento >= 0 && anoNascimento <= 15){
+        console.log('invalido')
+        window.alert('Entrada de dados inválida.')
+        return false
+    } else if (idade < 0) {
+        console.log('ano futuro')
+        document.getElementById("results").innerHTML = "Você <strong>não</strong> nasceu no futuro! Tente novamente."
+        return false
+    } else if (idade >= 0 && idade <= 15){
         console.log('crianca')
-    } else if (anoNascimento >= 16 && anoNascimento <= 30){
+    } else if (idade >= 16 && idade <= 30){
         console.log('jovem')
-    } else if (anoNascimento >= 31 && anoNascimento <= 59){
+    } else if (idade >= 31 && idade <= 59){
         console.log('adulto')
     } else {
         console.log('idoso')
     }
+
+    document.getElementById("results").innerHTML = `Detectamos ${sexo} de ${idade} anos!`
 
 
 

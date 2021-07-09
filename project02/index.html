@@ -17,16 +17,17 @@
             <input id="ano_nasc" type="number">
         </div>
         <div>
+            <!-- O conjunto de inputs do tipo radio que possuem o mesmo atributo 'name'
+            fazem parte do mesmo grupo, isto é, apenas um deles pode estar selecionado
+            de cada vez-->
             Sexo: 
-            <input id="sexo" type="radio" value="Masculino">
-            <label for="html">Masculino</label>
-            <input id="sexo" type="radio" value="Masculino" >
-            <label for="html">Feminino</label>
+            <input type="radio" id="male" name='sex' value ='male' checked>Masculino</input>
+            <input type="radio" id="female" name='sex' value="female">Feminino</input>
         </div>
         <div>
             <input type="button" id="button" value="Verificar" onclick="Verificar()">
         </div>
-        <div>
+        <div id="results">
             Preencha os dados acima para ver o resultado!
         </div>
 
