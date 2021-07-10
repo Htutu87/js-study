@@ -1,8 +1,3 @@
-// A função só está entrando na condição 'Inválido' quando recebe números negativos.
-// A comparação do typeof não parece estar funcionando.
-
-// Operador new cria uma instancia de objeto
-
 function Verificar(){
 
     var textoCaixa = document.getElementById("ano_nasc") // Esse método retorna o elemento HTML inteiro, não seu valor
